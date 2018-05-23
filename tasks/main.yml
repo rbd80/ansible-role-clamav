@@ -20,7 +20,7 @@
     - freshclam_result.stderr.find('locked by another process') != -1
 
 - include: setup-RedHat.yml
-  when: ansible_os_family == 'RedHat'
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux' or ansible_distribution == "Amazon"
 
 - name: Change configuration for the ClamAV daemon.
   lineinfile:
