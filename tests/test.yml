@@ -4,8 +4,11 @@
   pre_tasks:
     - name: Update apt cache.
       apt: update_cache=yes cache_valid_time=600
-      when: ansible_os_family == 'Debian'
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
       changed_when: False
-
+    - name: Update apt cache.
+      yum: update_cache=yes cache_valid_time=600
+      when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux' or ansible_distribution == "Amazon"
+      changed_when: False
   roles:
     - role_under_test
