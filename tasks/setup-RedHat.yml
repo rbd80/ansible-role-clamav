@@ -1,13 +1,9 @@
 ---
 
-# EPEL YUM repo URL
-clamav_epel_yumrepo_url: "{{ yumrepo_epel_url | default('https://dl.fedoraproject.org/pub/epel/$releasever/$basearch/') }}"
-
-# EPEL YUM repo GPG key
-clamav_epel_yumrepo_gpgkey: "{{ yumrepo_epel_gpgkey | default('https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-$releasever') }}"
-
-# Additional EPEL YUM repo params
-clamav_epel_yumrepo_params: "{{ yumrepo_epel_params | default({}) }}"
+- name: "Install the repository"
+  yum:
+    name: http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
+    state: present
 
 - name: Ensure Freshclam service is available.
   template:

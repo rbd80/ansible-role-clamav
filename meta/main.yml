@@ -2,9 +2,9 @@
 dependencies: []
 
 galaxy_info:
-  author: geerlingguy
+  author: Robert Donovan
   description: ClamAV installation and configuration.
-  company: "Midwestern Mac, LLC"
+  company: ""
   license: "license (BSD, MIT)"
   min_ansible_version: 2.2
   platforms:
