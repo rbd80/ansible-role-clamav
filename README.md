@@ -44,13 +44,20 @@ Control whether the `clamav-freshclam` service is running and/or enabled on syst
 
 None.
 
-## Example Playbook
 
+## Example Playbook
+```yaml
     - hosts: servers
       sudo: yes
       roles:
-        - rbd80.clamav
-
+        - ansible-role-clamav 
+```
+## Requirements.yaml
+ 
+```yaml
+- src: git+https://github.com/rbd80/ansible-role-clamav.git
+  version: master
+```
 ## License
 
 MIT / BSD
